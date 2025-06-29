@@ -3,9 +3,463 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcelino, Elouisa Joy - PORTFOLIO</title>
+    <title>Antonio Song - Product Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .diagonal-lines {
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.03) 2px,
+                rgba(255, 255, 255, 0.03) 4px
+            );
+        }
+        
+        .phone-mockup {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border: 2px solid #333;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+        
+        .phone-screen {
+            background: #f8f9fa;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .modal {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            border: 1px solid #333;
+        }
+
+        .project-tag {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .project-image {
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .phone-project-image {
+            object-fit: cover;
+            border-radius: 16px;
+        }
+    </style>
 </head>
-<body>
-    
+<body class="bg-black text-white min-h-screen diagonal-lines">
+    <!-- Header -->
+    <header class="flex justify-between items-center p-8 relative z-10">
+        <h1 class="text-xl font-bold tracking-wide">ELOUISA JOY MARCELINO</h1>
+        <nav class="flex space-x-8">
+            <a href="#" class="hover:text-gray-300 transition-colors duration-200">Home</a>
+            <!-- Updated to link to separate resume page instead of PDF -->
+            <a href="resume.html" class="hover:text-gray-300 transition-colors duration-200">Résumé</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex flex-col lg:flex-row items-center justify-center px-8 max-w-7xl mx-auto min-h-[calc(100vh-200px)]">
+        <!-- Left Content -->
+        <div class="lg:w-1/2 space-y-8 fade-in -mt-32 lg:-mt-48">
+            <div>
+                <h2 class="text-5xl lg:text-6xl font-light leading-tight mb-6">
+                    It's not just how it looks — it's how it works, feels, and flows.
+                </h2>
+                <p class="text-xl lg:text-2xl text-gray-400 leading-relaxed max-w-lg">
+                    Based in the Philippines, currently exploring the art of UI/UX design — blending logic, empathy, and visual storytelling.
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Content - Project Mockups -->
+        <div class="lg:w-1/2 flex flex-col items-center space-y-12 mt-16 lg:mt-0 lg:ml-16 lg:pl-8 fade-in">
+            <!-- LinkedIn Creator Subscribe Project -->
+            <div class="phone-mockup rounded-3xl p-2 hover-lift" onclick="openModal('linkedin-project')">
+                <div class="phone-screen rounded-2xl w-64 h-96 relative overflow-hidden">
+                    <!-- Replace this src with your actual LinkedIn project screenshot -->
+                    <img 
+                        src="/placeholder.svg?height=384&width=256" 
+                        alt="LinkedIn Creator Subscribe Project Screenshot"
+                        class="phone-project-image w-full h-full"
+                        data-project="linkedin-creator-subscribe"
+                    />
+                    <!-- Overlay for better visibility -->
+                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-end justify-center pb-4">
+                        <p class="text-white text-xs bg-black bg-opacity-50 px-2 py-1 rounded">Click to view details</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Label -->
+            <div class="text-center">
+                <p class="text-gray-400 text-sm mb-2">LinkedIn</p>
+                <h3 class="text-2xl font-semibold mb-2">Creator subscribe</h3>
+                <p class="text-gray-400">Subscribe to your favorite creators</p>
+            </div>
+
+            <!-- Square Banking Project -->
+            <div class="phone-mockup rounded-3xl p-2 hover-lift" onclick="openModal('square-project')">
+                <div class="phone-screen rounded-2xl w-64 h-96 relative overflow-hidden">
+                    <!-- Replace this src with your actual Square Banking project screenshot -->
+                    <img 
+                        src="/placeholder.svg?height=384&width=256" 
+                        alt="Square Banking Project Screenshot"
+                        class="phone-project-image w-full h-full"
+                        data-project="square-banking"
+                    />
+                    <!-- Overlay for better visibility -->
+                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-end justify-center pb-4">
+                        <p class="text-white text-xs bg-black bg-opacity-50 px-2 py-1 rounded">Click to view details</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="flex justify-center space-x-12 py-8 mt-16">
+        <a href="https://www.linkedin.com/in/elouisa-joy-marcelino-00931b355/" class="text-gray-400 hover:text-white transition-colors duration-200 hover-lift">LinkedIn</a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200 hover-lift">Medium</a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200 hover-lift">Instagram</a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200 hover-lift">Brunch</a>
+    </footer>
+
+    <!-- LinkedIn Project Modal -->
+    <div id="linkedin-project" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4">
+        <div class="modal-content rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-8">
+                <!-- Modal Header -->
+                <div class="flex justify-between items-start mb-8">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-2">LinkedIn Creator Subscribe</h2>
+                        <p class="text-gray-400">Empowering creators with subscription-based content</p>
+                    </div>
+                    <button onclick="closeModal('linkedin-project')" class="text-gray-400 hover:text-white text-2xl">×</button>
+                </div>
+
+                <!-- Project Images Gallery -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Project Showcase</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                        <!-- Replace these src attributes with your actual project images -->
+                        <img 
+                            src="/placeholder.svg?height=300&width=200" 
+                            alt="LinkedIn Creator Subscribe - Main Interface"
+                            class="project-image w-full h-48"
+                            data-image="linkedin-main-interface"
+                        />
+                        <img 
+                            src="/placeholder.svg?height=300&width=200" 
+                            alt="LinkedIn Creator Subscribe - Subscription Flow"
+                            class="project-image w-full h-48"
+                            data-image="linkedin-subscription-flow"
+                        />
+                        <img 
+                            src="/placeholder.svg?height=300&width=200" 
+                            alt="LinkedIn Creator Subscribe - Creator Dashboard"
+                            class="project-image w-full h-48"
+                            data-image="linkedin-creator-dashboard"
+                        />
+                    </div>
+                </div>
+
+                <!-- Project Details -->
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Project Overview</h3>
+                        <p class="text-gray-300 mb-6">
+                            Designed a subscription feature for LinkedIn that allows users to subscribe to their favorite creators' premium content. This feature bridges the gap between professional networking and content monetization.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold mb-2">Role</h4>
+                                <p class="text-gray-400">Lead Product Designer</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Duration</h4>
+                                <p class="text-gray-400">3 months (2023)</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Team</h4>
+                                <p class="text-gray-400">2 Designers, 3 Engineers, 1 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Key Features</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2">•</span>
+                                Creator profile subscription management
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2">•</span>
+                                Tiered subscription pricing options
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2">•</span>
+                                Premium content discovery feed
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2">•</span>
+                                Subscriber-only messaging features
+                            </li>
+                        </ul>
+
+                        <div class="mt-6">
+                            <h4 class="font-semibold mb-3">Technologies</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="project-tag px-3 py-1 rounded-full text-sm">Figma</span>
+                                <span class="project-tag px-3 py-1 rounded-full text-sm">Prototyping</span>
+                                <span class="project-tag px-3 py-1 rounded-full text-sm">User Research</span>
+                                <span class="project-tag px-3 py-1 rounded-full text-sm">A/B Testing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div class="border-t border-gray-700 pt-8">
+                    <h3 class="text-xl font-semibold mb-4">Impact & Results</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-400 mb-2">25%</div>
+                            <p class="text-gray-400">Increase in creator engagement</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-400 mb-2">$2.3M</div>
+                            <p class="text-gray-400">Revenue generated in first quarter</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-400 mb-2">15K</div>
+                            <p class="text-gray-400">Active subscribers in beta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Square Banking Project Modal -->
+    <div id="square-project" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4">
+        <div class="modal-content rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-8">
+                <!-- Modal Header -->
+                <div class="flex justify-between items-start mb-8">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-2">Square Banking Dashboard</h2>
+                        <p class="text-gray-400">Simplified banking for small business owners</p>
+                    </div>
+                    <button onclick="closeModal('square-project')" class="text-gray-400 hover:text-white text-2xl">×</button>
+                </div>
+
+                <!-- Project Images Gallery -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Project Showcase</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                        <!-- Replace these src attributes with your actual project images -->
+                        <img 
+                            src="/placeholder.svg?height=300&width=200" 
+                            alt="Square Banking - Dashboard Overview"
+                            class="project-image w-full h-48"
+                            data-image="square-dashboard-overview"
+                        />
+                        <img 
+                            src="/placeholder.svg?height=300&width=200" 
+                            alt="Square Banking - Transaction History"
+                            class="project-image w-full h-48"
+                            data-image="square-transaction-history"
+                        />
+                        <img 
+                            src="/placeholder.svg?height=300&width=200" 
+                            alt="Square Banking - Transfer Interface"
+                            class="project-image w-full h-48"
+                            data-image="square-transfer-interface"
+                        />
+                    </div>
+                </div>
+
+                <!-- Project Details -->
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Project Overview</h3>
+                        <p class="text-gray-300 mb-6">
+                            Redesigned the Square Banking mobile experience to help small business owners manage their finances more effectively. Focused on simplifying complex banking operations into intuitive, actionable interfaces.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold mb-2">Role</h4>
+                                <p class="text-gray-400">Senior Product Designer</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Duration</h4>
+                                <p class="text-gray-400">6 months (2023-2024)</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Team</h4>
+                                <p class="text-gray-400">4 Designers, 8 Engineers, 2 PMs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Key Features</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2">•</span>
+                                Real-time balance and transaction tracking
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2">•</span>
+                                Instant fund transfers and payments
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2">•</span>
+                                Cash flow forecasting tools
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2">•</span>
+                                Integrated expense categorization
+                            </li>
+                        </ul>
+
+                        <div class="mt-6">
+                            <h4 class="font-semibold mb-3">Technologies</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="project-tag px-3 py-1 rounded-full text-sm">React Native</span>
+                                <span class="project-tag px-3 py-1 rounded-full text-sm">Design System</span>
+                                <span class="project-tag px-3 py-1 rounded-full text-sm">Accessibility</span>
+                                <span class="project-tag px-3 py-1 rounded-full text-sm">FinTech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div class="border-t border-gray-700 pt-8">
+                    <h3 class="text-xl font-semibold mb-4">Impact & Results</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-400 mb-2">40%</div>
+                            <p class="text-gray-400">Reduction in support tickets</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-400 mb-2">4.8★</div>
+                            <p class="text-gray-400">App Store rating improvement</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-400 mb-2">60%</div>
+                            <p class="text-gray-400">Increase in daily active users</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal(modal.id);
+                }
+            });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    if (!modal.classList.contains('hidden')) {
+                        closeModal(modal.id);
+                    }
+                });
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Initialize animations when page loads
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.fade-in').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+
+        // Add click handlers for social links
+        document.querySelectorAll('footer a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const platform = e.target.textContent.toLowerCase();
+                console.log(`Navigating to ${platform}`);
+            });
+        });
+    </script>
 </body>
 </html>
