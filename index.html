@@ -79,10 +79,10 @@
     </header>
 
     <!-- Main Content -->
-    <main class="flex flex-col lg:flex-row items-center justify-center px-8 max-w-7xl mx-auto min-h-[calc(100vh-200px)]">
-        <!-- Left Content -->
-        <div class="lg:w-1/2 space-y-8 fade-in -mt-[18rem] lg:-mt-[95rem]">
-            <div>
+    <main class="lg:flex lg:h-screen">
+        <!-- Left Content - Fixed/Sticky -->
+        <div class="lg:w-1/2 lg:sticky lg:top-0 lg:h-screen lg:flex lg:items-center lg:justify-center px-8 fade-in">
+            <div class="space-y-8">
                 <h2 class="text-5xl lg:text-6xl font-light leading-tight mb-6">
                     It's not just how it looks — it's how it works, feels, and flows.
                 </h2>
@@ -92,9 +92,8 @@
             </div>
         </div>
 
-        <!-- Right Content - Project Mockups -->
-
-        <div class="lg:w-1/2 flex flex-col items-center space-y-12 mt-16 lg:mt-0 lg:ml-64 lg:pl-32 lg:pt-14 fade-in ">
+        <!-- Right Content - Scrollable Project Mockups -->
+        <div class="lg:w-1/2 lg:overflow-y-auto lg:h-screen flex flex-col items-center space-y-12 py-16 px-8 fade-in">
     <!-- Study Buddy Project -->
     <div class="flex flex-col items-center">
         <div class="phone-mockup rounded-3xl p-2 hover-lift" onclick="openModal('study-buddy-project')">
@@ -117,12 +116,12 @@
         </div>
     </div>
 
-    <!-- Square Banking Project -->
+    <!-- Resource Management Project -->
     <div class="flex flex-col items-center">
         <div class="phone-mockup rounded-3xl p-2 hover-lift" onclick="openModal('square-project')">
             <div class="phone-screen rounded-2xl w-64 h-96 relative overflow-hidden">
                 <img 
-                    src="/placeholder.svg?height=384&width=256" 
+                    src="/project_pics/1.1.png" 
                     alt="Square Banking Project Screenshot"
                     class="phone-project-image w-full h-full"
                     data-project="square-banking"
@@ -133,9 +132,9 @@
             </div>
         </div>
         <div class="text-center mt-4">
-            <p class="text-gray-400 text-sm mb-2">FinTech</p>
-            <h3 class="text-2xl font-semibold mb-2">Square Banking</h3>
-            <p class="text-gray-400">Business banking simplified</p>
+            <p class="text-gray-400 text-sm mb-2">Reservation</p>
+            <h3 class="text-2xl font-semibold mb-2">Resource Management</h3>
+            <p class="text-gray-400">Streamlining campus resources, one click at a time.</p>
         </div>
     </div>
 
@@ -284,15 +283,15 @@
         </div>
     </div>
 
-    <!-- Square Banking Project Modal -->
+    <!-- Resource Project Modal -->
     <div id="square-project" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4">
         <div class="modal-content rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
             <div class="p-8">
                 <!-- Modal Header -->
                 <div class="flex justify-between items-start mb-8">
                     <div>
-                        <h2 class="text-3xl font-bold mb-2">Square Banking Dashboard</h2>
-                        <p class="text-gray-400">Simplified banking for small business owners</p>
+                        <h2 class="text-3xl font-bold mb-2">Resource Management System<h2>
+                        <p class="text-gray-200">From projectors to PCs — reserve what you need, when you need it.</p>
                     </div>
                     <button onclick="closeModal('square-project')" class="text-gray-400 hover:text-white text-2xl">×</button>
                 </div>
@@ -302,17 +301,17 @@
                     <h3 class="text-xl font-semibold mb-4">Project Showcase</h3>
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
                         <img 
-                            src="/placeholder.svg?height=300&width=200" 
+                            src="/project_pics/1.png" 
                             alt="Square Banking - Dashboard Overview"
                             class="project-image w-full h-48"
                         />
                         <img 
-                            src="/placeholder.svg?height=300&width=200" 
+                            src="/project_pics/2.1.png" 
                             alt="Square Banking - Transaction History"
                             class="project-image w-full h-48"
                         />
                         <img 
-                            src="/placeholder.svg?height=300&width=200" 
+                            src="/project_pics/2.png" 
                             alt="Square Banking - Transfer Interface"
                             class="project-image w-full h-48"
                         />
@@ -324,21 +323,20 @@
                     <div>
                         <h3 class="text-xl font-semibold mb-4">Project Overview</h3>
                         <p class="text-gray-300 mb-6">
-                            Redesigned the Square Banking mobile experience to help small business owners manage their finances more effectively. Focused on simplifying complex banking operations into intuitive, actionable interfaces.
-                        </p>
+                          The Resource Management System is a centralized platform designed to streamline the reservation and monitoring of equipment and facilities within the College of Computing Studies. Whether it’s a projector, laptop, or lab space, the system allows users to view real-time availability and make reservations efficiently. It helps ensure that resources are well-utilized, accessible, and properly managed for academic use. </p>
                         
                         <div class="space-y-4">
                             <div>
                                 <h4 class="font-semibold mb-2">Role</h4>
-                                <p class="text-gray-400">Senior Product Designer</p>
+                                <p class="text-gray-400">Developer & UI/UX Designer</p>
                             </div>
                             <div>
                                 <h4 class="font-semibold mb-2">Duration</h4>
-                                <p class="text-gray-400">6 months (2023-2024)</p>
+                                <p class="text-gray-400">5 months (2024)</p>
                             </div>
                             <div>
                                 <h4 class="font-semibold mb-2">Team</h4>
-                                <p class="text-gray-400">4 Designers, 8 Engineers, 2 PMs</p>
+                                <p class="text-gray-400">2 Developer & UI/UX Designer</p>
                             </div>
                         </div>
                     </div>
@@ -347,51 +345,34 @@
                         <ul class="space-y-3 text-gray-300">
                             <li class="flex items-start">
                                 <span class="text-blue-400 mr-2">•</span>
-                                Real-time balance and transaction tracking
+                                Reservation System
                             </li>
                             <li class="flex items-start">
                                 <span class="text-blue-400 mr-2">•</span>
-                                Instant fund transfers and payments
+                                User Authentication
                             </li>
                             <li class="flex items-start">
                                 <span class="text-blue-400 mr-2">•</span>
-                                Cash flow forecasting tools
+                                Usage History Tracking
                             </li>
                             <li class="flex items-start">
                                 <span class="text-blue-400 mr-2">•</span>
-                                Integrated expense categorization
+                                Resource Categorization
                             </li>
                         </ul>
                         <div class="mt-6">
                             <h4 class="font-semibold mb-3">Technologies</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="project-tag px-3 py-1 rounded-full text-sm">React Native</span>
-                                <span class="project-tag px-3 py-1 rounded-full text-sm">Design System</span>
-                                <span class="project-tag px-3 py-1 rounded-full text-sm">Accessibility</span>
-                                <span class="project-tag px-3 py-1 rounded-full text-sm">FinTech</span>
+                                <span class="project-tag px-3 py-1 rounded-full text-sm">Php</span>
+                                <span class="project-tag px-3 py-1 rounded-full text-sm">Figma</span>
+                                <span class="project-tag px-3 py-1 rounded-full text-sm">MySQL Database</span>
+                               
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Results -->
-                <div class="border-t border-gray-700 pt-8">
-                    <h3 class="text-xl font-semibold mb-4">Impact & Results</h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-blue-400 mb-2">40%</div>
-                            <p class="text-gray-400">Reduction in support tickets</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-green-400 mb-2">4.8★</div>
-                            <p class="text-gray-400">App Store rating improvement</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-purple-400 mb-2">60%</div>
-                            <p class="text-gray-400">Increase in daily active users</p>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
