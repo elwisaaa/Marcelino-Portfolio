@@ -152,29 +152,81 @@
       </div>
     </section>
 
+    <!-- Certifications -->
+<section class="mb-12">
+    <h2 class="text-2xl font-bold mb-6 text-blue-400">Certificates</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+        <div>
+            <h3 class="text-lg font-semibold mb-4 certificate-name" onclick="openModal('/certficate/certificate1.png', 'Network Defense Essentials (NDE)')">Network Defense Essentials (NDE)</h3>
+            <div class="flex flex-wrap gap-2">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="certificateModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8);">
+    <div style="background-color:#1f2937; margin:5% auto; padding:20px; border-radius:10px; width:80%; max-width:700px; text-align:center;">
+        <span onclick="closeModal()" style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
+        <h3 id="modalTitle" style="color:white; font-size:20px; margin-bottom:15px;"></h3>
+        <img id="modalImage" src="/placeholder.svg" alt="Certificate" style="width:80%; height:auto; display:block; margin:0 auto; border-radius:5px;">
+    </div>
+</div>
+
+<script>
+function openModal(imageSrc, title) {
+    document.getElementById('certificateModal').style.display = 'block';
+    document.getElementById('modalImage').src = imageSrc;
+    document.getElementById('modalTitle').textContent = title;
+}
+
+function closeModal() {
+    document.getElementById('certificateModal').style.display = 'none';
+}
+
+window.onclick = function(event) {
+    var modal = document.getElementById('certificateModal');
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+</script>
+
+<style>
+.certificate-name {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.certificate-name:hover {
+    color: #60a5fa;
+}
+</style>
+
     <!-- Skills -->
     <section class="mb-12">
-      <h2 class="text-2xl font-bold mb-6 text-blue-400">Skills</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Design</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">Figma</span>
-            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">Wireframing</span>
-            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">Responsive Layouts</span>
-          </div>
+        <h2 class="text-2xl font-bold mb-6 text-blue-400">Skills</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Design</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">Figma</span>
+                    <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">Wireframing</span>
+                    <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">Responsive Layouts</span>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Technical</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">HTML</span>
+                    <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">CSS</span>
+                    <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">PHP</span>
+                    <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">Python</span>
+                </div>
+            </div>
         </div>
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Technical</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">HTML</span>
-            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">CSS</span>
-            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">PHP</span>
-            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">Python</span>
-          </div>
-        </div>
-      </div>
     </section>
+
+   
   </main>
 
   <!-- Footer -->
