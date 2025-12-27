@@ -34,17 +34,18 @@
       border-radius: 50%;
     }
     @media print {
-      .no-print { display: none; }
-      body { background: white; color: black; }
-      .diagonal-lines { background: none; }
+      .no-print { display: none !important; }
+      header { display: none !important; }
+      body { background: white !important; color: black !important; }
+      .diagonal-lines { background: none !important; }
     }
   </style>
 </head>
 <body class="bg-black text-white min-h-screen diagonal-lines">
   <!-- Header -->
-  <header class="flex justify-between items-center p-8 relative z-10 no-print">
+  <header class="flex justify-between items-center p-8 relative z-10">
     <h1 class="text-xl font-bold tracking-wide">
-      <a href="index.html" class="hover:text-gray-300 transition-colors">ELOUISA JOY MARCELINO</a>
+      <a href="index.html" class="text-black hover:text-gray-700 transition-colors">ELOUISA JOY MARCELINO</a>
     </h1>
     <nav class="flex space-x-8">
       <a href="index.html" class="hover:text-gray-300 transition-colors duration-200">Home</a>
@@ -61,6 +62,8 @@
         <span>Zamboanga City, Philippines</span>
         <span>•</span>
         <a href="mailto:marcelinoelouisajoy@gmail.com" class="hover:text-white">marcelinoelouisajoy@gmail.com</a>
+        <span>•</span>
+        <span>+63 9998062477</span>
       </div>
       <div class="flex justify-center space-x-6 mt-2">
         <a href="https://www.linkedin.com/in/elouisa-joy-marcelino-00931b355/" class="text-blue-400 hover:text-blue-300">LinkedIn</a>
@@ -84,8 +87,23 @@
 
     <!-- Experience -->
     <section class="mb-12">
+      
       <h2 class="text-2xl font-bold mb-6 text-blue-400">Project Experience</h2>
+    
       <div class="resume-section space-y-8">
+          <!--Thesis-->
+<div class="resume-item">
+  <div class="flex justify-between items-start mb-2">
+    <h3 class="text-xl font-semibold">Detecting Near-Drowning Behavior in Video FeedF</h3>
+    <span class="text-gray-400">2025</span>
+  </div>
+  <p class="text-blue-300 mb-3">Thesis Course Requirement</p>
+  <ul class="text-gray-300 space-y-2">
+    <li>• Designed and developed a video-based monitoring system to detect near-drowning behavior using Convolutional Neural Networks</li>
+  <li>• Focused on analyzing human motion patterns and visual cues in real-time video feeds to identify potential drowning incidents</li>
+  <li>• Built an efficient and responsive detection pipeline to support timely alerts and improve water safety monitoring</li>
+  </ul>
+</div>
         <div class="resume-item">
           <div class="flex justify-between items-start mb-2">
             <h3 class="text-xl font-semibold">UI/UX Designer – Meeco Web Application</h3>
@@ -127,7 +145,7 @@
   </ul>
 </div>
 
-      </div>
+</div>
       
     </section>
 
@@ -158,6 +176,34 @@
     <div class="grid md:grid-cols-2 gap-8">
         <div>
             <h3 class="text-lg font-semibold mb-4 certificate-name" onclick="openModal('/certficate/certificate1.png', 'Network Defense Essentials (NDE)')">Network Defense Essentials (NDE)</h3>
+            <div class="flex flex-wrap gap-2">
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+        <div>
+            <h3 class="text-lg font-semibold mb-4 certificate-name" onclick="openModal('/certficate/intro-to-ai.png', 'Introduction to Artificial Intelligence')">Introduction to Artificial Intelligence</h3>
+            <div class="flex flex-wrap gap-2">
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+        <div>
+            <h3 class="text-lg font-semibold mb-4 certificate-name" onclick="openModal('/certficate/design-thinking.png', 'Design Thinking')">Design Thinking</h3>
+            <div class="flex flex-wrap gap-2">
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+        <div>
+            <h3 class="text-lg font-semibold mb-4 certificate-name" onclick="openModal('/certficate/website-UI-UX.png', 'Website UI/UX Designing')">Website UI/UX Designing</h3>
+            <div class="flex flex-wrap gap-2">
+            </div>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+        <div>
+            <h3 class="text-lg font-semibold mb-4 certificate-name" onclick="openModal('/certficate/BSCS-OJT.png', 'BSCS On-the-Job Training')">BSCS On-the-Job Training</h3>
             <div class="flex flex-wrap gap-2">
             </div>
         </div>
@@ -201,31 +247,87 @@ window.onclick = function(event) {
     color: #60a5fa;
 }
 </style>
-
-    <!-- Skills -->
-    <section class="mb-12">
-        <h2 class="text-2xl font-bold mb-6 text-blue-400">Skills</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div>
-                <h3 class="text-lg font-semibold mb-4">Design</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">Figma</span>
-                    <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">Wireframing</span>
-                    <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">Responsive Layouts</span>
+<!-- Skills -->
+<section class="mb-12">
+    <h2 class="text-2xl font-bold mb-6 text-blue-400">Skills</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+        <!-- Design Skills -->
+        <div>
+            <h3 class="text-lg font-semibold mb-4">Design</h3>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm">Figma</span>
+                        <span class="text-xs text-gray-400">85%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-blue-400 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <h3 class="text-lg font-semibold mb-4">Technical</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">HTML</span>
-                    <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">CSS</span>
-                    <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">PHP</span>
-                    <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">Python</span>
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm">Wireframing</span>
+                        <span class="text-xs text-gray-400">90%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-blue-400 h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm">Responsive Layouts</span>
+                        <span class="text-xs text-gray-400">88%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-blue-400 h-2 rounded-full" style="width: 88%"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
+        <!-- Technical Skills -->
+        <div>
+            <h3 class="text-lg font-semibold mb-4">Technical</h3>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm">HTML</span>
+                        <span class="text-xs text-gray-400">95%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-blue-400 h-2 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm">CSS</span>
+                        <span class="text-xs text-gray-400">92%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-blue-400 h-2 rounded-full" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm">PHP</span>
+                        <span class="text-xs text-gray-400">80%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-blue-400 h-2 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm">Python</span>
+                        <span class="text-xs text-gray-400">98%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-blue-400 h-2 rounded-full" style="width: 98%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
    
   </main>
 

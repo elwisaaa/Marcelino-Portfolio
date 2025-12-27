@@ -94,7 +94,7 @@
 
         <!-- Right Content - Scrollable Project Mockups -->
         <div class="lg:w-1/2 lg:overflow-y-auto lg:h-screen flex flex-col items-center space-y-12 py-16 px-8 fade-in">
-    <!-- Study Buddy Project -->
+             <!-- Study Buddy Project -->
     <div class="flex flex-col items-center">
         <div class="phone-mockup rounded-3xl p-2 hover-lift" onclick="openModal('study-buddy-project')">
             <div class="phone-screen rounded-2xl w-64 h-96 relative overflow-hidden">
@@ -115,6 +115,28 @@
             <p class="text-gray-400">Study with a buddy</p>
         </div>
     </div>
+            <!-- Thesis Project -->
+    <div class="flex flex-col items-center">
+        <div class="phone-mockup rounded-3xl p-2 hover-lift" onclick="openModal('thesis-project')">
+            <div class="phone-screen rounded-2xl w-64 h-96 relative overflow-hidden">
+                <img 
+                    src="project_pics/thesis-cover.png" 
+                    alt="Thesis Project Screenshot"
+                    class="phone-project-image w-full h-full"
+                    data-project="thesis-project"
+                />
+                <div class="absolute inset-0 bg-black bg-opacity-20 flex items-end justify-center pb-4">
+                    <p class="text-white text-xs bg-black bg-opacity-50 px-2 py-1 rounded">Click to view details</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <p class="text-gray-400 text-sm mb-2">Near-Drowning Detection</p>
+            <h3 class="text-2xl font-semibold mb-2">Detecting Near-Drowning Behavior</h3>
+            <p class="text-gray-400">Video-based monitoring system using CNN</p>
+        </div>
+    </div>
+
 
     <!-- Resource Management Project -->
     <div class="flex flex-col items-center">
@@ -164,7 +186,103 @@
 </div>
     </main>
 
-    
+     <!-- Thesis Modal -->
+    <!-- Thesis Modal -->
+<div id="thesis-project" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div class="modal-content rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-start mb-8">
+                <div>
+                    <h2 class="text-3xl font-bold mb-2">Near-Drowning Detection System</h2>
+                    <p class="text-gray-400">Real-time video analysis for improved water safety.</p>
+                </div>
+                <button onclick="closeModal('thesis-project')" class="text-gray-400 hover:text-white text-2xl">×</button>
+            </div>
+
+            <!-- Project Images Gallery -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4">Project Showcase</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <img 
+                        src="/project_pics/4.png" 
+                        alt="Near-Drowning Detection - Video Feed"
+                        class="project-image w-full h-46"
+                    />
+                    <img 
+                        src="/project_pics/3.png" 
+                        alt="Near-Drowning Detection - CNN Processing"
+                        class="project-image w-full h-46"
+                    />
+                    <img 
+                        src="/project_pics/5.png" 
+                        alt="Near-Drowning Detection - Alert System"
+                        class="project-image w-full h-46"
+                    />
+                </div>
+            </div>
+
+            <!-- Project Details -->
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Project Overview</h3>
+                    <p class="text-gray-300 mb-6">
+                        This thesis project focuses on the development of a near-drowning detection system using
+                        Convolutional Neural Networks (CNNs) to analyze real-time video feeds. The system identifies
+                        abnormal movement patterns and visual cues associated with drowning behavior and triggers
+                        alerts to enable faster intervention and enhance water safety in swimming pools and similar environments.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">Role</h4>
+                            <p class="text-gray-400">Thesis Proponent</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Duration</h4>
+                            <p class="text-gray-400">1 year (2025)</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Team</h4>
+                            <p class="text-gray-400">4 members</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Key Features</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">•</span>
+                            Real-Time Video Feed Monitoring
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">•</span>
+                            CNN-Based Behavior Classification
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">•</span>
+                            Near-Drowning Detection & Alerts
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">•</span>
+                            Automated Safety Support System
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-3">Technologies</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="project-tag px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="project-tag px-3 py-1 rounded-full text-sm">Roboflow</span>
+                            <span class="project-tag px-3 py-1 rounded-full text-sm">CNN</span>
+                            <span class="project-tag px-3 py-1 rounded-full text-sm">YOLOv8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- Study Buddy Project Modal -->
     <div id="study-buddy-project" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4">
         <div class="modal-content rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
